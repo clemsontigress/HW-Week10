@@ -33,3 +33,31 @@ const render = require("./lib/htmlRenderer");
 // for further information. Be sure to test out each class and verify it generates an 
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work!```
+
+//prompt the user for their email, id, and specific information based on their role with 
+//the company. For instance, an intern may provide their school, whereas an engineer may provide their GitHub username.
+
+inquirer
+  .prompt([
+    {
+      type: "list",
+      message: "What is your role?",
+      name: "role",
+      choices: ["Manager","Engineer","Intern"]
+    },
+    {
+      type: "checkbox",
+      message: "What languages do you know?",
+      name: "language"
+    },
+    {
+      type: "list",
+      message: "What is your preferred method of communciation?",
+      name: "communication"
+    }
+  ])
+  .then(function(response) {
+      fs.writeFile(index.txt, response.data, error)
+
+    
+  });

@@ -13,8 +13,14 @@ class Intern extends Employee {
         super(_name, _id, _email);
         this.school = _school
 
-    }
+    };
 
-    getSchool()
-    getRole()
+    getSchool() {
+      return this.school;
+    };
+    getRole() {
+      return "Intern";
+    };
 }
+
+module.exports = Intern;
